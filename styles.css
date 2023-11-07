@@ -1,0 +1,203 @@
+
+:root {
+    --text-dark:rgb(20, 24, 36);
+    --text-medium-color:rgb(151, 151, 151);
+    --primary:rgb(0, 130, 252);
+    --primary-soft:rgb(229, 243, 255);
+    --succes: rgb(113, 194, 25);
+    --succes-soft: rgb(240, 248, 234);
+    --info: rgb(248, 132, 1);
+    --info-soft: rgb(255, 246, 229);
+    --warning: rgb(229, 45, 35);
+    --warning-soft: rgb(255, 236, 237);
+    --background-color: rgb(248, 248, 250);
+    --background-accent: white;
+
+    background-color: var(--background-color);
+    color: var(--text-dark);
+    font-size: 16px;
+    margin: 0px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    background-color: var(--background-accent);
+    margin-top: 0px;
+    border-bottom: 1px solid var(--background-color);
+    padding-left: 0;
+    padding-right: 10px;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+    margin-bottom: 4rem;
+    font-size: 1rem;
+}
+
+h2 {
+    color: var(--text-medium-color);
+    font-weight: normal;
+}
+h3 {
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+section {
+    background-color:var(--background-accent);
+    padding: 1rem 2rem;
+    border-radius: 1.5rem;
+}
+/* --------------------------------------------- */
+/* -----------     Parámetros      ------------- */
+/* --------------------------------------------- */
+
+#parametros {
+    margin-left: 2rem;
+    width: 22rem;
+}
+
+.function-input {
+    display: flex;
+    font-family: Arial;
+    font-size: 15px;
+    margin: 1rem 2rem;
+}
+
+.function-text {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-left: 5px;
+}
+
+.number-input {
+    width: 3rem;
+    border: 1px solid;
+    border-color: var(--text-medium-color);
+    border-radius: 0.8rem;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.parameter-input {
+    width: 5rem;
+    height: 2rem;
+    border: 1px solid;
+    border-color: var(--text-medium-color);
+    border-radius: 0.3rem;
+    text-align: center;
+    margin: 0.5rem;
+}
+
+label {
+    margin-left: 2rem;
+}
+
+#proporcion {
+    width: 3rem;
+}
+
+#solucionButton {
+    display: block;
+    color: white;
+    background-color: var(--primary);
+    font-weight: 500;
+    font-size: 0.85rem;
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 2rem;
+    margin-left: auto;
+    margin-top: 2rem;
+    cursor:pointer;    
+    transition: opacity 0.15s;
+}
+
+#solucionButton:hover {
+    opacity: 0.8;
+}
+
+#solucionButton:active {
+    opacity: 0.5;
+}
+
+/* --------------------------------------------- */
+/* --------------  Resultados  ----------------- */
+/* --------------------------------------------- */
+
+/*
+.results-text {
+    color:var(--text-medium-color);
+    font-family: Roboto;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.tariff-header {
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    color: var(--primary);
+}
+
+.demand-header {
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    color: var(--info);
+}
+
+.costs-header {
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    color: var(--warning);
+}
+
+.benefits-header {
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    color: var(--succes);
+}
+
+/* --------------------------------------------- */
+/* -----------------  Gráfico  ----------------- */
+/* --------------------------------------------- */
+
+/*
+.graph {
+    display: block;
+    width:100%;
+}
+
+
+/* --------------------------------------------- */
+/* -------------  Restricciones  --------------- */
+/* --------------------------------------------- */
+
+/*
+.restrictions {
+    display: block;
+    color:var(--text-medium-color);
+    font-family: Roboto;
+    font-weight: 500;
+    text-align: center;
+}
+
+.text-warning {
+    display: block;
+    color:var(--warning);
+    font-family: Roboto;
+    font-weight: 500;
+    text-align: center;
+
+}

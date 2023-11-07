@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifa en dos Partes</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="grid-style.css"> -->
+</head>
+
+<body>
+    <header>
+        <h1 class="main-header" >Tarifa en dos partes </h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <section id="parametros">
+            <h2> Parámetros </h2>
+            <form method="post" id="input-parametros">
+                <h3> Demanda </h3>
+                <div class="function-input">
+                    <p class="function-text">	q<sub>a</sub> = </p>
+                    <input class= "number-input" id="constant_1" name ="constant_1" inputmode="numeric" maxlength="4" required>
+                    <p class="function-text"> - </p>
+                    <input class= "number-input" id = "slope_1" name = "slope_1" inputmode="numeric" maxlength="3" required> 
+                    <p class="function-text"> x p<sub>a</sub> </p>
+                </div>
+
+                <div class="function-input">
+                    <p class="function-text">	q<sub>b</sub> = </p>
+                    <input class= "number-input" id = "constant_2" name="constant_2" inputmode="numeric" maxlength="4" required>
+                    <p class="function-text"> - </p>
+                    <input class= "number-input" id="slope_2" name = "slope_2" inputmode="numeric" maxlength="3" required> 
+                    <p class="function-text"> x p<sub>b</sub> </p>
+                </div>
+
+                <label for="numero_clientes">Número de clientes: </label>
+                <input class= "parameter-input" id="numero_clientes" name = "numero_clientes" type="number" value="2" min = "2" required>
+                <br>
+                <label for="proporcion">Porporción clientes demanda alta: </label>
+                <input class= "parameter-input" id="proporcion" name="proporcion" type="number" value="0.5" min="0" max="1" step="0.1" required>
+
+                <h3>Costos</h3>
+                <label for="costo_fijo">Costos fijos</label>
+                <input class= "parameter-input" id="costo_fijo" name ="costo_fijo" type="number" value="0" min="0" required>
+                <br>
+                <label for="costo_marginal">Costo marginal:</label>
+                <input class= "parameter-input" id ="costo_marginal" name= "costo_marginal" type="number" value="1" min="0" required>
+                </br>
+                <button id="solucionButton" type="submit" value="Solución">Solución</button>
+            </form>
+        </section>
+
+        <!-- <div>
+            <div class = "results-wrapper">
+                <h3 class = "sub-header"> Resultados</h3>
+                <div class = "sub-results-grid">
+                    <div class = sub-results-wrapper>
+                        <div class = "tariff-wrapper">
+                            <h5 class = "tariff-header"> Tarifa </h5>
+                            <p class="results-text"> Cargo Fijo A: $</p>
+                            <p class="results-text"> Precio unitario A: $</p>
+                            <p class="results-text"> Cargo Fijo B: $</p>
+                            <p class="results-text"> Precio unitario B: $</p>
+
+                        </div>
+                        <div class = "demand-wrapper">
+                            <h5 class = "demand-header"> Cantidad demandada </h5>
+                            <p class="results-text"> Total: </p>
+                            <p class="results-text"> Cliente de demanda alta: </p>
+                            <p class="results-text"> Cliente de demanda baja:</p>
+                        </div>
+                    </div>
+                    <div class = sub-results-wrapper>
+                        <div class = "costs-wrapper">
+                            <h5 class = "costs-header"> Costos </h5>
+                            <p class="results-text"> Totales: $</p>
+                            <p class="results-text"> Fijos: $</p>
+                            <p class="results-text"> Variables: $</p>
+                            <p class="results-text"> Medio: $</p>
+                        </div>
+                        <div class = "benefits-wrapper">
+                            <h5 class = "benefits-header"> Beneficios </h5>
+                            <p class="results-text"> Totales: $</p>
+                            <p class="results-text"> Clientes de demanda alta: </p>
+                            <p class="results-text"> Clientes de demanda baja: </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "graph-wrapper">
+                <h3 class = "sub-header"> Gráfico </h3> 
+                <canvas class = "graph" id = "t2p_graph" width = "1000px" height="1000px"> 
+                </canvas>
+
+            </div>
+            <div class = restrictions-wrapper>
+                <h3 class = "sub-header"> Restricciones</h3class>
+                <h4 class = "mini-header-center">	Excedentes del consumidor</h4>
+                <p class = "restrictions"> ECa(p<sub>a</sub>) = </p>
+                <p class = "restrictions"> ECb(p<sub>b</sub>) = </p>
+                <h4 class = "mini-header-center">	Restricción de participación</h4>
+                    <p class = "restrictions"> ECa(p<sub>a</sub>) - CFa &#8805; 0 </p>
+                    <p class = "restrictions"> ECb(p<sub>b</sub>) - CFb &#8805; 0 </p>
+
+                <h4 class = "mini-header-center">	Restricción de compatibilidad de incentivos</h4>
+                    <p class = "restrictions"> ECa(p<sub>a</sub>) - CFa &#8805; ECa(p<sub>b</sub>) - CFb </p>
+                    <p class = "restrictions"> ECb(p<sub>b</sub>) - CFb &#8805; ECb(p<sub>a</sub>) - CFa </p>
+            </div>
+        </div> -->
+
+    </main>
+
+
+</body>
+</html>
