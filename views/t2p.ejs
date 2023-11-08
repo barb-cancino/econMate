@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifa en dos Partes</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/grid-style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="main-header" >Tarifa en dos partes </h1>
+        <nav>
+            <ul>
+                <li><a href="/index">Home</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <section id="parametros">
+            <h2> Parámetros </h2>
+            <form method="post" id="input-parametros">
+                <h3> Demanda </h3>
+                <div class="function-input">
+                    <p class="function-text">	q<sub>a</sub> = </p>
+                    <input class= "number-input" id="constant_1" name ="constant_1" inputmode="numeric" maxlength="4" required>
+                    <p class="function-text"> - </p>
+                    <input class= "number-input" id = "slope_1" name = "slope_1" inputmode="numeric" maxlength="3" required> 
+                    <p class="function-text"> x p<sub>a</sub> </p>
+                </div>
+
+                <div class="function-input">
+                    <p class="function-text">	q<sub>b</sub> = </p>
+                    <input class= "number-input" id = "constant_2" name="constant_2" inputmode="numeric" maxlength="4" required>
+                    <p class="function-text"> - </p>
+                    <input class= "number-input" id="slope_2" name = "slope_2" inputmode="numeric" maxlength="3" required> 
+                    <p class="function-text"> x p<sub>b</sub> </p>
+                </div>
+
+                <label for="numero_clientes">Número de clientes: </label>
+                <input class= "parameter-input" id="numero_clientes" name = "numero_clientes" type="number" value="2" min = "2" required>
+                <br>
+                <label for="proporcion">Porporción clientes demanda alta: </label>
+                <input class= "parameter-input" id="proporcion" name="proporcion" type="number" value="0.5" min="0" max="1" step="0.1" required>
+
+                <h3>Costos</h3>
+                <label for="costo_fijo">Costos fijos</label>
+                <input class= "parameter-input" id="costo_fijo" name ="costo_fijo" type="number" value="0" min="0" required>
+                <br>
+                <label for="costo_marginal">Costo marginal:</label>
+                <input class= "parameter-input" id ="costo_marginal" name= "costo_marginal" type="number" value="1" min="0" required>
+                </br>
+                <button id="solucionButton" type="submit" value="Solución">Solución</button>
+            </form>
+        </section>
+        <section id="resultados">
+            <h2> Resultados </h2>
+            <div class = "sub-results-grid">
+                <div class = sub-results-wrapper>
+                    <div class = "subSection" id="tarifas">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tarifas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Cargo Fijo A</td>
+                                    <td>$0</td>
+                                </tr>
+                                <tr>
+                                    <td>Precio unitario A</td>
+                                    <td>$0</td>
+                                </tr>
+                                <tr>
+                                    <td>Cargo fijo B</td>
+                                    <td>$0</td>
+                                </tr>
+                                <tr>
+                                    <td>Precio unitario B</td>
+                                    <td>$0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class = "subSection" id="cantDemandada">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Cantidad Demandada</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Cliente de demanda alta</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Cliente de demanda baja</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div> 
+                <div class = sub-results-wrapper>
+                    <div class = "subSection" id="costos">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Costos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Fijos</td>
+                                    <td>$0</td>
+                                </tr>
+                                <tr>
+                                    <td>Variables</td>
+                                    <td>$0</td>
+                                </tr>
+                                <tr>
+                                    <td>Totales</td>
+                                    <td>$0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class = "subSection" id="beneficios">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Beneficios</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Totales</td>
+                                    <td>$0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2> Gráfico </h2> 
+            <canvas class = "graph" id = "t2p_graph" width = "1000px" height="1000px"> 
+                <script src="/js/t2p_graph.js"></script>
+            </canvas>
+        </section>
+        <section id="restricciones">
+            <h2> Restricciones</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Excedentes del consumidor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ECa(p<sub>a</sub>)</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>ECb(p<sub>b</sub>)</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Restricción de participación</h3>
+                <p> ECa(p<sub>a</sub>) - CFa &#8805; 0 </p>
+                <p> ECb(p<sub>b</sub>) - CFb &#8805; 0 </p>
+
+            <h3>Restricción de compatibilidad de incentivos</h3>
+                <p> ECa(p<sub>a</sub>) - CFa &#8805; ECa(p<sub>b</sub>) - CFb </p>
+                <p> ECb(p<sub>b</sub>) - CFb &#8805; ECb(p<sub>a</sub>) - CFa </p>
+            </section>
+    </main>
+
+
+</body>
+</html>

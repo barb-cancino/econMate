@@ -1,0 +1,30 @@
+main {
+    display: grid;
+    grid-template-columns:repeat(auto-fit,  minmax(20rem, 1fr));
+    margin: 1.5rem;
+    gap: 0.5rem;
+}
+
+#parametros {
+    grid-column: span 1;
+    grid-row: span 2;
+    justify-content: left;
+    background-color: var(--background-accent);
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+}
+#resultados {
+    grid-column: span 2;
+}
+.sub-results-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(215px ,1fr));
+    gap: 0.5rem;
+    vertical-align: top;
+}
+
+.sub-results-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(215px,1fr));
+    gap: 10px;
+}
