@@ -10,10 +10,10 @@
 
 <body>
     <header>
-        <h1 class="main-header" >Tarifa en dos partes </h1>
+        <h1 class="main-header">Tarifa en dos partes </h1>
         <nav>
             <ul>
-                <li><a href="/index">Home</a></li>
+                <li><a href="/">Home</a></li>
             </ul>
         </nav>
         <hr>
@@ -21,7 +21,7 @@
     <main>
         <section id="parametros">
             <h2> Parámetros </h2>
-            <form method="post" id="input-parametros">
+            <form action="/t2p/solucion" method="post" id="input-parametros">
                 <h3> Demanda </h3>
                 <div class="function-input">
                     <p class="function-text">	q<sub>a</sub> = </p>
@@ -69,19 +69,19 @@
                             <tbody>
                                 <tr>
                                     <td>Cargo Fijo A</td>
-                                    <td>$0</td>
+                                    <td>$<%= solucion.cargoFijoA %></td>
                                 </tr>
                                 <tr>
                                     <td>Precio unitario A</td>
-                                    <td>$0</td>
+                                    <td>$<%= solucion.precioA %></td>
                                 </tr>
                                 <tr>
                                     <td>Cargo fijo B</td>
-                                    <td>$0</td>
+                                    <td>$<%= solucion.cargoFijoB %></td>
                                 </tr>
                                 <tr>
                                     <td>Precio unitario B</td>
-                                    <td>$0</td>
+                                    <td>$<%= solucion.precioB %></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -96,15 +96,15 @@
                             <tbody>
                                 <tr>
                                     <td>Cliente de demanda alta</td>
-                                    <td>0</td>
+                                    <td><%= solucion.cantidadA %></td>
                                 </tr>
                                 <tr>
                                     <td>Cliente de demanda baja</td>
-                                    <td>0</td>
+                                    <td><%= solucion.cantidadB %></td>
                                 </tr>
                                 <tr>
                                     <td>Total</td>
-                                    <td>0</td>
+                                    <td><%= solucion.cantidadTotal %></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -121,15 +121,15 @@
                             <tbody>
                                 <tr>
                                     <td>Fijos</td>
-                                    <td>$0</td>
+                                    <td>$ <%= solucion.costosFijos %></td>
                                 </tr>
                                 <tr>
                                     <td>Variables</td>
-                                    <td>$0</td>
+                                    <td>$ <%= solucion.costosVariables %></td>
                                 </tr>
                                 <tr>
                                     <td>Totales</td>
-                                    <td>$0</td>
+                                    <td>$ <%= solucion.costoTotal %></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -144,7 +144,7 @@
                             <tbody>
                                 <tr>
                                     <td>Totales</td>
-                                    <td>$0</td>
+                                    <td>$ <%= solucion.beneficiosTotales %></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -169,24 +169,41 @@
                 <tbody>
                     <tr>
                         <td>ECa(p<sub>a</sub>)</td>
-                        <td>0</td>
+                        <td> <%= solucion.excedenteConsumidorA %></td>
                     </tr>
                     <tr>
                         <td>ECb(p<sub>b</sub>)</td>
-                        <td>0</td>
+                        <td> <%= solucion.excedenteConsumidorB %></td>
                     </tr>
                 </tbody>
             </table>
             <h3>Restricción de participación</h3>
-                <p> ECa(p<sub>a</sub>) - CFa &#8805; 0 </p>
-                <p> ECb(p<sub>b</sub>) - CFb &#8805; 0 </p>
+                <% if (solucion.restriccionParticipacionA) { %>
+                    <p> ECa(p<sub>a</sub>) - CFa &#8805; 0 </p>
+                <% } else { %>
+                    <p class="warning"> ECa(p<sub>a</sub>) - CFa &#8805; 0 </p>
+                <% } %>
 
+                <% if (solucion.restriccionParticipacionB) { %>
+                    <p> ECb(p<sub>b</sub>) - CFb &#8805; 0 </p>
+                <% } else { %>
+                    <p class="warning"> ECb(p<sub>b</sub>) - CFb &#8805; 0 </p>
+                <% } %>
+                    
             <h3>Restricción de compatibilidad de incentivos</h3>
+            <% if (solucion.restriccionCompIncentivosA) { %>
                 <p> ECa(p<sub>a</sub>) - CFa &#8805; ECa(p<sub>b</sub>) - CFb </p>
+            <% } else { %>
+                <p class="warning"> ECa(p<sub>a</sub>) - CFa &#8805; ECa(p<sub>b</sub>) - CFb </p>
+            <% } %>
+
+            <% if (solucion.restriccionCompIncentivosB) { %>
                 <p> ECb(p<sub>b</sub>) - CFb &#8805; ECb(p<sub>a</sub>) - CFa </p>
+            <% } else { %>
+                <p class="warning"> ECb(p<sub>b</sub>) - CFb &#8805; ECb(p<sub>a</sub>) - CFa </p>
+            <% } %>
+
             </section>
     </main>
-
-
 </body>
 </html>

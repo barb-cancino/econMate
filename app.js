@@ -30,9 +30,10 @@ app.post('/t2p/solucion', (req, res) => {
     const parametros = req.body;
     // Use the form data to create or modify the variable
     solucion = t2p.t2pSolucion(parametros);
+    res.render('t2p', {solucion});
     // Send the variable as a JSON response
-    res.json({ parametros, solucion });
-    res.redirect('/solucion')
+    //res.json({ parametros, solucion });
+    //res.redirect('/solucion')
 });
 
 app.listen(3000, () => { 

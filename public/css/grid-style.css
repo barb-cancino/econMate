@@ -1,8 +1,8 @@
 main {
     display: grid;
     grid-template-columns:repeat(auto-fit,  minmax(20rem, 1fr));
-    margin: 1.5rem;
-    gap: 0.5rem;
+    margin: 1.2rem;
+    gap: 1rem;
 }
 
 #parametros {

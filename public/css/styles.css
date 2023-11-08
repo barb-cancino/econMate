@@ -218,3 +218,7 @@ th:nth-child(2) {
 #restricciones th {
     color: var(--primary);
 }
+
+.warning {
+    color: var(--warning);
+}
