@@ -38,17 +38,21 @@
                     <p class="function-text"> x p<sub>b</sub> </p>
                 </div>
 
-                <label for="numero_clientes">Número de clientes: </label>
+                <label for="numero_clientes">Número de clientes </label>
+                <br>
                 <input class= "parameter-input" id="numero_clientes" name = "numero_clientes" type="number" value="2" min = "2" required>
                 <br>
-                <label for="proporcion">Porporción clientes demanda alta: </label>
-                <input class= "parameter-input" id="proporcion" name="proporcion" type="number" value="0.5" min="0" max="1" step="0.1" required>
+                <label for="proporcion">Porporción clientes demanda alta </label>
+                <br>
+                <input class= "parameter-input" id="proporcion" name="proporcion" type="range" value="0.5" min="0" max="1" step="0.1" required>
 
                 <h3>Costos</h3>
                 <label for="costo_fijo">Costos fijos</label>
+                <br>
                 <input class= "parameter-input" id="costo_fijo" name ="costo_fijo" type="number" value="0" min="0" required>
                 <br>
-                <label for="costo_marginal">Costo marginal:</label>
+                <label for="costo_marginal">Costo marginal</label>
+                <br>
                 <input class= "parameter-input" id ="costo_marginal" name= "costo_marginal" type="number" value="1" min="0" required>
                 </br>
                 <button id="solucionButton" type="submit" value="Solución">Solución</button>

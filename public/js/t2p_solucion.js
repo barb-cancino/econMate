@@ -1,6 +1,6 @@
 
-let DA = [NaN, NaN];
-let DB = [NaN, NaN];
+let DA = [null, null];
+let DB = [null, null];
 
 const t2pSolucion = (parametros) => {
 
@@ -251,12 +251,12 @@ form.addEventListener('submit', function (event) {
         // --------------  Solución  --------------- //
         // Costo Marginal
 
-        ctx.fillText(`pb = ${solucion.precioB}`, widthUnit * 4, heigthUnit * 4);
+        ctx.fillText(`pb = ${solucion.precioB}`, widthUnit*7- 0.5*widthSubUnit,7*heigthUnit - (solucion.precioB/maxDispPagar)*5*heigthUnit);
 
         ctx.strokeStyle = "rgb(0, 0, 0)";
         ctx.beginPath();
-        ctx.moveTo(widthUnit, posPrecioB );
-        ctx.lineTo(widthUnit*7,posPrecioB )
+        ctx.moveTo(widthUnit, 7*heigthUnit - (solucion.precioB/maxDispPagar)*5*heigthUnit );
+        ctx.lineTo(widthUnit*7 - widthSubUnit, 7*heigthUnit - (solucion.precioB/maxDispPagar)*5*heigthUnit )
         ctx.stroke();
         // Precio Cliente Demanda Baja
         // Intersección con eje Y

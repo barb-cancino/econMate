@@ -77,22 +77,18 @@ section {
 }
 
 .parameter-input {
-    width: 5rem;
     height: 2rem;
     border: 1px solid;
     border-color: var(--text-medium-color);
     border-radius: 0.3rem;
-    text-align: center;
     margin: 0.5rem;
+    margin-left: 2rem;
 }
 
 label {
     margin-left: 2rem;
 }
 
-#proporcion {
-    width: 3rem;
-}
 
 #solucionButton {
     display: block;
